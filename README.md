@@ -2,7 +2,7 @@
 Yield curve bootstrapper using real-time US Treasury data to derive  spot rates and forward rates.
 
 ## What it does
-We pull real-time US Treasury par yields directly from the US Treasury website. Since par yields are observable in the market but spot rates are not, we bootstrap the zero coupon spot curve from the par curve one maturity at a time, each step uses all previously calculated spot rates to solve for the next one. For maturities that fall between two known points (e.g. 1.5y, 2.5y), we use linear interpolation between the last known spot rate and the next par yield as an approximation. We then derive implied forward rates between each consecutive pair of maturities from the spot curve. Finally, we plot all three curves together — par yield, spot rate, and forward rate.
+We pull real-time US Treasury par yields directly from the US Treasury website. Since par yields are observable in the market but spot rates are not, we bootstrap the zero coupon spot curve from the par curve one maturity at a time, each step uses all previously calculated spot rates to solve for the next one. For maturities that fall between two known points (e.g. 1.5y, 2.5y), we use linear interpolation between the last known spot rate and the next par yield as an approximation. We then derive implied forward rates between each consecutive pair of maturities from the spot curve. Finally, we plot all three curves together: par yield, spot rate, and forward rate.
 
 ## Key concepts
 **Bootstrapping** — deriving spot rates from par yields one maturity at a time, using previously calculated spot rates to solve for the next
